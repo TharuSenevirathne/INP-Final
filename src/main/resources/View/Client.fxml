@@ -38,33 +38,33 @@
             </ScrollPane>
 
 
-<!--            <HBox alignment="CENTER" spacing="10">-->
-<!--               <TextField fx:id="ClientInputMsg" prefHeight="46.0" prefWidth="400.0" promptText="Type your message here..."  style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #0c61bd;                                   -fx-border-width: 1px; -fx-padding: 0 15px; -fx-background-color: #1466c4;                                  -fx-text-fill: #e0e0e0; -fx-prompt-text-fill: #ffffff;">-->
-<!--                  <font>-->
-<!--                     <Font size="14.0" />-->
-<!--                  </font>-->
-<!--                  <effect>-->
-<!--                     <DropShadow>-->
-<!--                        <color>-->
-<!--                           <Color opacity="0.3" />-->
-<!--                        </color>-->
-<!--                     </DropShadow>-->
-<!--                  </effect>-->
-<!--               </TextField>-->
+            <HBox alignment="CENTER" spacing="10">
+               <TextField fx:id="ClientInputMsg" prefHeight="46.0" prefWidth="400.0" promptText="Type your message here..."  style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #0c61bd;                                   -fx-border-width: 1px; -fx-padding: 0 15px; -fx-background-color: #1466c4;                                  -fx-text-fill: #e0e0e0; -fx-prompt-text-fill: #ffffff;">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+                  <effect>
+                     <DropShadow>
+                        <color>
+                           <Color opacity="0.3" />
+                        </color>
+                     </DropShadow>
+                  </effect>
+               </TextField>
 
-<!--               <Button fx:id="sendMsg" onAction="#btnSend" prefHeight="46.0" prefWidth="100.0" style="-fx-background-color: #ff0230; -fx-text-fill: white;-fx-border-radius: 20; -fx-cursor: hand;" text="Send">-->
-<!--                  <font>-->
-<!--                     <Font name="System Bold" size="14.0" />-->
-<!--                  </font>-->
-<!--                  <effect>-->
-<!--                     <DropShadow>-->
-<!--                        <color>-->
-<!--                           <Color red="0.0" green="0.4" blue="0.8" opacity="0.5" />-->
-<!--                        </color>-->
-<!--                     </DropShadow>-->
-<!--                  </effect>-->
-<!--               </Button>-->
-<!--            </HBox>-->
+               <Button fx:id="sendMsg" onAction="#btnSend" prefHeight="46.0" prefWidth="100.0" style="-fx-background-color: #ff0230; -fx-text-fill: white;-fx-border-radius: 20; -fx-cursor: hand;" text="Send">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font>
+                  <effect>
+                     <DropShadow>
+                        <color>
+                           <Color red="0.0" green="0.4" blue="0.8" opacity="0.5" />
+                        </color>
+                     </DropShadow>
+                  </effect>
+               </Button>
+            </HBox>
          </children>
       </VBox>
    </children>

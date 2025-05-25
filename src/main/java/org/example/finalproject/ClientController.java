@@ -27,7 +27,6 @@ public class ClientController {
     private DataOutputStream dataOutputStream;
     private String message = "";
     private String clientId = "";
-    private Scanner scanner = new Scanner(System.in);
 
 
     public void initialize() {
@@ -44,53 +43,23 @@ public class ClientController {
                 message = dataInputStream.readUTF();
                 if (message.startsWith("CLIENTID:")) {
                     clientId = message.substring(9);
-                    Platform.runLater(() -> {
-                        try {
-                            appendMsg("You are " + clientId);
-                        } catch (IOException e) {
-                            throw new RuntimeException(e);
-                        }
-                    });
+                    Platform.runLater(() -> appendMsg("You are " + clientId));
                 }
 
                 while (true) {
                     message = dataInputStream.readUTF();
-
-                    if (message.startsWith("file")) {
-                        String filePath = message.substring(4);
-                        continue;
-                    } else {
-                        Platform.runLater(() -> {
-                            try {
-                                appendMsg(message);
-                            } catch (IOException e) {
-                                throw new RuntimeException(e);
-                            }
-                        });
-                    }
+                        Platform.runLater(() -> appendMsg(message));
                 }
             } catch (IOException e) {
-                Platform.runLater(() -> {
-                    try {
-                        appendMsg("Error: Server not found or disconnected");
-                    } catch (IOException ex) {
-                        throw new RuntimeException(ex);
-                    }
-                });
+                Platform.runLater(() -> appendMsg("Error: Server not found or disconnected"));
                 e.printStackTrace();
             }
         }).start();
     }
 
-    private void appendMsg(String text) throws IOException {
-
-        while (!socket.isClosed()) {
-            System.out.print("Client: ");
-            String clientMessage = scanner.nextLine();
-            dataOutputStream.writeUTF(clientMessage);
-            dataOutputStream.flush();
-
-        }
+    private void appendMsg(String text) {
+        Label label = new Label(text);
+        ClientTextArea.getChildren().add(label);
     }
 
     public void btnSend(ActionEvent actionEvent) {
@@ -102,13 +71,7 @@ public class ClientController {
                 dataOutputStream.flush();
                 ClientInputMsg.clear();
             } catch (IOException e) {
-                Platform.runLater(() -> {
-                    try {
-                        appendMsg("Error: Could not send message");
-                    } catch (IOException ex) {
-                        throw new RuntimeException(ex);
-                    }
-                });
+                Platform.runLater(() -> appendMsg("Error: Could not send message"));
                 e.printStackTrace();
             }
         }

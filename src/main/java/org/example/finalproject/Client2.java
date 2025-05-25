@@ -19,7 +19,7 @@ public class Client2 extends Application {
         stage.setTitle("Client 2");
         stage.setScene(scene);
         stage.centerOnScreen();
-        stage.close();
+        stage.show();
     }
 
 
